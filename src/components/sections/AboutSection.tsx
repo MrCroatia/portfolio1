@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { FaGraduationCap, FaBriefcase, FaLaptopCode, FaGlobeEurope } from 'react-icons/fa';
@@ -72,7 +72,7 @@ const AboutSection = () => {
             </h3>
             
             <p className="text-gray-600 dark:text-gray-300">
-              I'm a passionate web designer and developer with a keen eye for detail and a commitment to delivering exceptional digital experiences. With over 4 years of experience in the industry, I've worked with clients worldwide to bring their visions to life.
+              I&apos;m a passionate web designer and developer with a keen eye for detail and a commitment to delivering exceptional digital experiences. With over 4 years of experience in the industry, I&apos;ve worked with clients worldwide to bring their visions to life.
             </p>
             
             <p className="text-gray-600 dark:text-gray-300">

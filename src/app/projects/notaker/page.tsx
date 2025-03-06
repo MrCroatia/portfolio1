@@ -155,7 +155,7 @@ export default function NotakerProject() {
             </p>
             
             <p className="text-gray-600 dark:text-gray-300">
-              One of the key features of NoteTaker is its cloud synchronization capability, which ensures that users' notes are accessible across all their devices. The app also includes a search function to quickly find specific notes, as well as categorization options to keep notes organized.
+              One of the key features of NoteTaker is its cloud synchronization capability, which ensures that users notes are accessible across all their devices. The app also includes a search function to quickly find specific notes, as well as categorization options to keep notes organized.
             </p>
           </motion.div>
           
@@ -189,7 +189,7 @@ export default function NotakerProject() {
             </h2>
             
             <p className="text-gray-600 dark:text-gray-300">
-              One of the main challenges in developing NoteTaker was implementing real-time synchronization while maintaining a responsive user interface. To address this, I utilized Firebase's real-time database capabilities, which allowed for efficient data updates without compromising performance.
+              One of the main challenges in developing NoteTaker was implementing real-time synchronization while maintaining a responsive user interface. To address this, I utilized Firebase&apos;s real-time database capabilities, which allowed for efficient data updates without compromising performance.
             </p>
             
             <p className="text-gray-600 dark:text-gray-300">

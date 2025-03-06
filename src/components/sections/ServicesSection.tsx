@@ -111,7 +111,7 @@ const ServicesSection = () => {
             Need a Custom Solution?
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            I offer tailored solutions to meet your specific requirements. Let's discuss your project and create something amazing together.
+            I offer tailored solutions to meet your specific requirements. Let&apos;s discuss your project and create something amazing together.
           </p>
           <motion.a 
             href="#contact"

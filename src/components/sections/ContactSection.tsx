@@ -143,10 +143,10 @@ const ContactSection = () => {
             
             <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                Let's create something amazing together!
+                Let&apos;s create something amazing together!
               </h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                I'm available for freelance projects worldwide. Whether you need a website, web application, or digital strategy, I'm here to help bring your vision to life.
+                I&apos;m available for freelance projects worldwide. Whether you need a website, web application, or digital strategy, I&apos;m here to help bring your vision to life.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
                 Feel free to reach out through the contact form or directly via email or phone.
