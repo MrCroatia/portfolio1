@@ -1,27 +1,24 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-
 // Define project type
 interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image: string; // This can be removed if not used
   tags: string[];
   url: string;
   subdomain: string;
 }
-
 // Sample projects data
 const projects: Project[] = [
   {
     id: 1,
     title: "NoteTaker App",
     description: "A minimalist note-taking application with markdown support and cloud sync.",
-    image: "/projects/project1.jpg",
+    image: "/projects/project1.jpg", // Optional if not used
     tags: ["React", "Firebase", "Tailwind CSS"],
     url: "/projects/notaker",
     subdomain: "notaker.fragment42.com"
@@ -30,7 +27,7 @@ const projects: Project[] = [
     id: 2,
     title: "Travel Blog",
     description: "A responsive travel blog showcasing adventures around the world with a modern design.",
-    image: "/projects/project2.jpg",
+    image: "/projects/project2.jpg", // Optional if not used
     tags: ["Next.js", "Contentful", "GSAP"],
     url: "/projects/travelblog",
     subdomain: "travelblog.fragment42.com"
@@ -39,7 +36,7 @@ const projects: Project[] = [
     id: 3,
     title: "E-Commerce Platform",
     description: "A full-featured e-commerce solution with product management and payment integration.",
-    image: "/projects/project3.jpg",
+    image: "/projects/project3.jpg", // Optional if not used
     tags: ["Next.js", "Stripe", "MongoDB"],
     url: "/projects/ecommerce",
     subdomain: "shop.fragment42.com"
@@ -48,7 +45,7 @@ const projects: Project[] = [
     id: 4,
     title: "Portfolio Template",
     description: "A customizable portfolio template for creative professionals and agencies.",
-    image: "/projects/project4.jpg",
+    image: "/projects/project4.jpg", // Optional if not used
     tags: ["React", "Framer Motion", "Styled Components"],
     url: "/projects/portfolio",
     subdomain: "portfolio.fragment42.com"
@@ -57,7 +54,7 @@ const projects: Project[] = [
     id: 5,
     title: "Weather Dashboard",
     description: "Real-time weather information with interactive maps and forecasts.",
-    image: "/projects/project5.jpg",
+    image: "/projects/project5.jpg", // Optional if not used
     tags: ["Vue.js", "OpenWeather API", "Chart.js"],
     url: "/projects/weather",
     subdomain: "weather.fragment42.com"
@@ -66,37 +63,30 @@ const projects: Project[] = [
     id: 6,
     title: "Recipe Finder",
     description: "A recipe discovery platform with filtering options and step-by-step instructions.",
-    image: "/projects/project6.jpg",
+    image: "/projects/project6.jpg", // Optional if not used
     tags: ["React", "Spoonacular API", "CSS Modules"],
     url: "/projects/recipes",
     subdomain: "recipes.fragment42.com"
   }
 ];
-
 // Filter categories
 const categories = ["All", "React", "Next.js", "Vue.js", "Firebase", "API Integration"];
-
 const PortfolioSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
-  
   const filterProjects = (category: string) => {
     setActiveCategory(category);
-    
     if (category === "All") {
       setFilteredProjects(projects);
       return;
     }
-    
     const filtered = projects.filter(project => 
       project.tags.some(tag => tag.includes(category))
     );
-    
     setFilteredProjects(filtered);
   };
-  
   return (
     <section 
       id="portfolio" 
@@ -118,7 +108,6 @@ const PortfolioSection = () => {
             Explore a selection of my recent projects showcasing my skills in web design and development.
           </p>
         </motion.div>
-        
         {/* Filter Categories */}
         <motion.div 
           className="flex flex-wrap justify-center gap-2 mb-12"
@@ -142,7 +131,6 @@ const PortfolioSection = () => {
             </motion.button>
           ))}
         </motion.div>
-        
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
@@ -158,7 +146,6 @@ const PortfolioSection = () => {
     </section>
   );
 };
-
 const ProjectCard = ({ 
   project, 
   index,
@@ -177,12 +164,12 @@ const ProjectCard = ({
     >
       <Link href={project.url} className="block relative">
         <div className="relative h-60 overflow-hidden">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+          <iframe
+            src={`https://${project.subdomain}`} // Use the subdomain to load the live site
+            title={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            style={{ border: 'none' }} // Remove borders for a cleaner look
+            loading="lazy" // Lazy load the iframe
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
             <div className="p-6 w-full">
@@ -194,16 +181,13 @@ const ProjectCard = ({
           </div>
         </div>
       </Link>
-      
       <div className="p-6">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
           {project.title}
         </h3>
-        
         <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
           {project.description}
         </p>
-        
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag, i) => (
             <span 
@@ -214,7 +198,6 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
-        
         <div className="text-sm text-gray-500 dark:text-gray-400">
           <span className="font-medium">Subdomain:</span> {project.subdomain}
         </div>
@@ -222,5 +205,4 @@ const ProjectCard = ({
     </motion.div>
   );
 };
-
 export default PortfolioSection;
