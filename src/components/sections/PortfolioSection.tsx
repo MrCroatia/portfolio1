@@ -162,14 +162,12 @@ const ProjectCard = ({
       transition={{ duration: 0.5, delay: 0.1 * index }}
       className="group bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
     >
-      <Link href={project.url} className="block relative">
+      <Link href={`https://${project.subdomain}`} className="block relative">
         <div className="relative h-60 overflow-hidden">
-          <iframe
-            src={`https://${project.subdomain}`} // Use the subdomain to load the live site
-            title={project.title}
+          <img
+            src={project.image}
+            alt={project.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            style={{ border: 'none' }} // Remove borders for a cleaner look
-            loading="lazy" // Lazy load the iframe
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
             <div className="p-6 w-full">
