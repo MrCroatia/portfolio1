@@ -18,7 +18,7 @@ const projects: Project[] = [
     id: 1,
     title: "NoteTaker App",
     description: "A minimalist note-taking application with markdown support and cloud sync.",
-    image: "/projects/project1.jpg", // Optional if not used
+    image: "/projects/notaker.png", // Optional if not used
     tags: ["React", "Firebase", "Tailwind CSS"],
     url: "/projects/notaker",
     subdomain: "notaker.fragment42.com"
@@ -27,7 +27,7 @@ const projects: Project[] = [
     id: 2,
     title: "Travel Blog",
     description: "A responsive travel blog showcasing adventures around the world with a modern design.",
-    image: "/projects/project2.jpg", // Optional if not used
+    image: "/projects/travelblog.png", // Optional if not used
     tags: ["Next.js", "Contentful", "GSAP"],
     url: "/projects/travelblog",
     subdomain: "travelblog.fragment42.com"
@@ -36,16 +36,16 @@ const projects: Project[] = [
     id: 3,
     title: "E-Commerce Platform",
     description: "A full-featured e-commerce solution with product management and payment integration.",
-    image: "/projects/project3.jpg", // Optional if not used
+    image: "/projects/ecommerce.png", // Optional if not used
     tags: ["Next.js", "Stripe", "MongoDB"],
     url: "/projects/ecommerce",
-    subdomain: "shop.fragment42.com"
+    subdomain: "ecommerce.fragment42.com"
   },
   {
     id: 4,
     title: "Portfolio Template",
     description: "A customizable portfolio template for creative professionals and agencies.",
-    image: "/projects/project4.jpg", // Optional if not used
+    image: "/projects/portfolio.png", // Optional if not used
     tags: ["React", "Framer Motion", "Styled Components"],
     url: "/projects/portfolio",
     subdomain: "portfolio.fragment42.com"
