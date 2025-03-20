@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -10,33 +12,10 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">
+      <SimpleBar className="flex-grow">
         {children}
-      </main>
+      </SimpleBar>
       <Footer />
-      <style jsx>{`
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-          width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: #f1f1f1;
-        }
-
-        .dark ::-webkit-scrollbar-track {
-          background: #2d2d2d;
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, var(--purple), var(--pink));
-          border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #7c3aed, #db2777);
-        }
-      `}</style>
     </div>
   );
 };

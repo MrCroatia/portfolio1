@@ -20,7 +20,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.15.1",
-    "react-spring": "^9.7.5"
+    "react-spring": "^9.7.5",
+    "simplebar-react": "^3.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

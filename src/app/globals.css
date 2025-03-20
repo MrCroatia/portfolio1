@@ -2,6 +2,28 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* SimpleBar Custom Scrollbar */
+.simplebar-scrollbar::before {
+  background: linear-gradient(to bottom, var(--purple), var(--pink)) !important;
+  border-radius: 5px !important;
+}
+
+.simplebar-scrollbar:hover::before {
+    background: linear-gradient(to bottom, #7c3aed, #db2777) !important;
+}
+
+.simplebar-track.simplebar-vertical {
+    width: 10px;
+}
+
+.dark .simplebar-track.simplebar-vertical {
+    background-color: #2d2d2d;
+}
+
+.simplebar-track.simplebar-horizontal {
+    display: none;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
