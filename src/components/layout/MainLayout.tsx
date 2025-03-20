@@ -14,6 +14,29 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         {children}
       </main>
       <Footer />
+      <style jsx>{`
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+          background: #2d2d2d;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient(to bottom, var(--purple), var(--pink));
+          border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(to bottom, #7c3aed, #db2777);
+        }
+      `}</style>
     </div>
   );
 };

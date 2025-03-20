@@ -197,7 +197,7 @@ const ProjectCard = ({
           ))}
         </div>
         <div className="text-sm text-gray-500 dark:text-gray-400">
-          <span className="font-medium">Subdomain:</span> {project.subdomain}
+          <span className="font-medium">Subdomain:</span> {project.subdomain.substring(0, 10)}...
         </div>
       </div>
     </motion.div>

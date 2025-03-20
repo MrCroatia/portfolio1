@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./scrollbar.css";
 import { ThemeProvider } from "./theme-provider";
 
 export const metadata: Metadata = {
