@@ -2,28 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* SimpleBar Custom Scrollbar */
-.simplebar-scrollbar::before {
-  background: linear-gradient(to bottom, var(--purple), var(--pink)) !important;
-  border-radius: 5px !important;
-}
-
-.simplebar-scrollbar:hover::before {
-    background: linear-gradient(to bottom, #7c3aed, #db2777) !important;
-}
-
-.simplebar-track.simplebar-vertical {
-    width: 10px;
-}
-
-.dark .simplebar-track.simplebar-vertical {
-    background-color: #2d2d2d;
-}
-
-.simplebar-track.simplebar-horizontal {
-    display: none;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -54,6 +32,28 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Custom scrollbar styles */
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--purple), var(--pink));
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #db2777);
+}
+
+html::-webkit-scrollbar-corner {
+  background: transparent;
 }

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import SimpleBar from 'simplebar-react';
-import 'simplebar-react/dist/simplebar.min.css';
+import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
+import 'overlayscrollbars/overlayscrollbars.css';
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -12,9 +12,26 @@ const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <SimpleBar className="flex-grow">
-        {children}
-      </SimpleBar>
+      <OverlayScrollbarsComponent
+        options={{
+          scrollbars: {
+            theme: 'os-theme-dark',
+            autoHide: 'leave',
+            autoHideDelay: 100,
+            clickScroll: true,
+            pointers: ['mouse', 'touch', 'pen'],
+          },
+          overflowBehavior: {
+            x: 'hidden',
+            y: 'scroll'
+          }
+        }}
+        className="flex-grow"
+      >
+        <main>
+          {children}
+        </main>
+      </OverlayScrollbarsComponent>
       <Footer />
     </div>
   );
