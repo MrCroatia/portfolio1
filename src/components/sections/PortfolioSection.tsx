@@ -53,21 +53,21 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: "Weather Dashboard",
-    description: "Real-time weather information with interactive maps and forecasts.",
-    image: "/projects/project5.jpg", // Optional if not used
-    tags: ["Vue.js", "OpenWeather API", "Chart.js"],
+    title: "Climate Change Chart",
+    description: "Interactive climate change data visualization using Chart.js and Vue.js.",
+    image: "/projects/weather.png",
+    tags: ["Vue.js", "API Integration", "Chart.js"],
     url: "/projects/weather",
     subdomain: "weather.fragment42.com"
   },
   {
     id: 6,
-    title: "Recipe Finder",
-    description: "A recipe discovery platform with filtering options and step-by-step instructions.",
-    image: "/projects/project6.jpg", // Optional if not used
-    tags: ["React", "Spoonacular API", "CSS Modules"],
-    url: "/projects/recipes",
-    subdomain: "recipes.fragment42.com"
+    title: "Kanban Task Board",
+    description: "A collaborative task management board with drag-and-drop functionality.",
+    image: "/projects/kanban.png",
+    tags: ["React", "Drag & Drop", "TypeScript"],
+    url: "/projects/kanban",
+    subdomain: "kanban.fragment42.com"
   }
 ];
 // Filter categories
