@@ -21,7 +21,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             clickScroll: true,
             pointers: ['mouse', 'touch', 'pen'],
           },
-          overflowBehavior: {
+          overflow: {
             x: 'hidden',
             y: 'scroll'
           }
