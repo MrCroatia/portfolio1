@@ -52,7 +52,7 @@ const ContactSection = () => {
       // This is just a placeholder for the implementation
       await emailjs.sendForm(
         'service_3pi3fcb', 
-        'template_zat5app', 
+        'template_u5alv2h',
         formRef.current!, 
         '3HqfwHhZv4jtqFHuq'
       );
