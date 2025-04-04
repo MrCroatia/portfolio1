@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import gsap from 'gsap';
 
 const HeroSection = () => {
