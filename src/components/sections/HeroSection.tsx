@@ -18,12 +18,15 @@ const HeroSection = () => {
         { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out" }
       );
       
+      // Remove the GSAP animation for the imageRef container as it's replaced by the CTA with its own framer-motion animation
+      /*
       tl.fromTo(
         imageRef.current,
         { scale: 0.8, opacity: 0 },
         { scale: 1, opacity: 1, duration: 1, ease: "elastic.out(1, 0.5)" },
         "-=0.5"
       );
+      */
     }
   }, []);
 
@@ -77,82 +80,33 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div ref={imageRef} className="relative">
-            {/* Main image container - You can place your personal photo here */}
-            <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-500/20 mix-blend-overlay z-10 rounded-2xl"></div>
-              
-{/* Replace this with your personal photo or keep the placeholder */}
-{/* Uncomment and modify this to use your personal photo */}
-{ 
-<Image
-  src="/hero.png"  
-  alt="Examples of work"
-  fill
-  sizes="(max-width: 768px) 100vw, 50vw"
-  className="object-cover"
-  priority
-/>
-}
-
-              
-              {/* Placeholder colored background if no image is available */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/40 to-pink-500/40 z-0"></div>
-            </div>
-            
-            {/* Floating elements - These create the animated shapes around your image */}
+          <div ref={imageRef} className="flex items-center justify-center lg:min-h-[500px]">
+            {/* +++ ADD NEW CTA CONTENT START +++ */}
             <motion.div 
-              className="absolute -top-6 -left-6 w-20 h-20 bg-purple-500 rounded-2xl"
-              animate={{ 
-                y: [0, -15, 0],
-                rotate: [0, 10, 0]
-              }}
-              transition={{ 
-                duration: 5, 
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            />
-            
-            <motion.div 
-              className="absolute -bottom-8 -right-8 w-16 h-16 bg-pink-500 rounded-full"
-              animate={{ 
-                y: [0, 20, 0],
-                x: [0, 10, 0]
-              }}
-              transition={{ 
-                duration: 6, 
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            />
-            
-            {/* Additional floating elements for more visual interest */}
-            <motion.div 
-              className="absolute top-1/2 -right-4 w-12 h-12 bg-purple-400 rounded-lg opacity-70"
-              animate={{ 
-                y: [0, -25, 0],
-                rotate: [0, -15, 0]
-              }}
-              transition={{ 
-                duration: 7, 
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            />
-            
-            <motion.div 
-              className="absolute bottom-1/4 -left-5 w-10 h-10 bg-pink-400 rounded-full opacity-70"
-              animate={{ 
-                x: [0, 15, 0],
-                y: [0, 10, 0]
-              }}
-              transition={{ 
-                duration: 8, 
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            />
+              className="bg-gradient-to-br from-pink-500 to-orange-400 p-8 md:p-12 rounded-2xl shadow-xl text-white text-center w-full max-w-md lg:max-w-lg"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Spring Offer!
+              </h2>
+              <p className="text-lg md:text-xl mb-2">
+                Get a stunning, custom-built website for just <span className="font-extrabold text-2xl">$200!</span>
+              </p>
+              <p className="text-sm opacity-90 mb-6">
+                Limited time offer for the first 20 clients.
+              </p>
+              <motion.a 
+                href="#contact"
+                className="inline-block bg-white text-pink-600 font-semibold px-8 py-3 rounded-lg transition-colors hover:bg-gray-100 text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Claim Your Spot!
+              </motion.a>
+            </motion.div>
+            {/* +++ ADD NEW CTA CONTENT END +++ */}
           </div>
         </div>
       </div>
