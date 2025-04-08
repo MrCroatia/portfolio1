@@ -22,9 +22,9 @@ const Footer = () => {
               Crafting exceptional digital experiences that blend creativity with cutting-edge technology.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="https://github.com" icon={<FaGithub size={20} />} />
-              <SocialLink href="https://linkedin.com" icon={<FaLinkedin size={20} />} />
-              <SocialLink href="https://twitter.com" icon={<FaTwitter size={20} />} />
+              <SocialLink href="https://github.com/MrCroatia" icon={<FaGithub size={20} />} />
+              <SocialLink href="https://www.linkedin.com/in/petar-vlcek/" icon={<FaLinkedin size={20} />} />
+              <SocialLink href="https://x.com/fragment42web" icon={<FaTwitter size={20} />} />
               <SocialLink href="https://instagram.com" icon={<FaInstagram size={20} />} />
             </div>
           </div>
